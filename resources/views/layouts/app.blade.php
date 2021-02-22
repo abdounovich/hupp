@@ -119,7 +119,7 @@ body {
   <body>
 
     <div id="loading" style="width: 100%; height:100%"  class="bg-white">
-      <img id="loading-image" src="{{ asset('images/loading.gif') }}" alt="Loading..." />
+      <img id="loading-image" src="https://cdn.dribbble.com/users/579645/screenshots/2951106/basic_loading_loop.gif" alt="Loading..." />
       </div> 
    <script type="application/javascript">
 
