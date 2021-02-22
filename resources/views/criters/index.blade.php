@@ -26,7 +26,7 @@
         <a  href="#">
           <i style="font-size: 22px" class="fa fa-cog p-2  align-middle">  </i>Parametres </a>
           <a  href="/information">
-            <i style="font-size: 22px" class="fa fa-info p-2 ml-1 align-middle">  </i>Information
+            <i style="font-size: 22px" class="fa fa-info p-2 ml-1 align-middle">  </i>Documentation
           </a>
       </div>
       <form class="form-inline mb-3  " action="{{route('instruments.search')}}" method="POST">
