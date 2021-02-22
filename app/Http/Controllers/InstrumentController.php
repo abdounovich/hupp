@@ -220,7 +220,7 @@ $categories=Categorie::all();
 
         $criters=Criter::all();
         $query=$request->get('search');
-        $instruments=Instrument::Where('nom', 'like', '%' . $query . '%')->get();
+        $instruments=Instrument::Where('nom', 'ILIKE', '%' . $query . '%')->get();
         return view('instruments.search')
         ->with("instruments",$instruments)
         ->with("query",$query)                
