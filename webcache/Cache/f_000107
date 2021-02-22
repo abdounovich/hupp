@@ -1,0 +1,682 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <title>HUPPHARMA OPPERET- Categories</title>
+    <link href="/css/app.css" rel="stylesheet">
+    <script src="/js/app.js"></script>
+
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <!-- Bootstrap CSS -->
+<style>
+
+body { 
+  background: url("http://127.0.0.1:8000/images/bg.png") no-repeat center center fixed; 
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+}
+#loading {width: 100%;height: 100%;top: 0px;left: 0px;position: fixed;display: block; z-index: 99}
+
+#loading-image {position: absolute;top: 40%;left: 45%;z-index: 100} 
+/* The side navigation menu */
+
+.sidebar a:hover:not(.active) {
+      background-color: #555;
+      color: white;
+    }
+
+.sidebar {
+      margin: 0;
+      padding: 0;
+      width: 200px;
+      background-color: #f1f1f1;
+      position: fixed;
+      height: 100%;
+      overflow: auto;
+    }
+    
+    /* Sidebar links */
+    .sidebar a {
+      display: block;
+      color: black;
+      padding: 16px;
+      text-decoration: none;
+    }
+    
+    /* Active/current link */
+    .sidebar a.active {
+      background-color:mediumpurple;
+      color: white;
+    }
+    
+    .bg-hupp{      background-color:mediumpurple;
+}
+    /* Links on mouse-over */
+  
+    
+    /* Page content. The value of the margin-left property should match the value of the sidebar's width property */
+    div.content {
+      margin-left: 200px;
+      padding: 1px 16px;
+      height: 1000px;
+    }
+    
+    /* On screens that are less than 700px wide, make the sidebar into a topbar */
+    @media  screen and (max-width: 700px) {
+      .sidebar {
+        width: 100%;
+        height: auto;
+        position: relative;
+      }
+      .sidebar a {float: left;}
+      div.content {margin-left: 0;}
+    }
+    
+    /* On screens that are less than 400px, display the bar vertically, instead of horizontally */
+    @media  screen and (max-width: 400px) {
+      .sidebar a {
+        text-align: center;
+        float: none;
+      }
+    }
+</style>
+  </head>
+
+
+
+  <body class=" bg-light">
+
+    <div id="loading" style="width: 100%; height:100%"  class="bg-white">
+      <img id="loading-image" src="http://127.0.0.1:8000/images/loading.gif" alt="Loading..." />
+      </div> 
+   <script type="application/javascript">
+
+$(window).on("load",function(){
+     $("#loading").fadeOut(2000);
+});
+$(window).on("load",function(){
+     $("#loading-image").fadeOut(1500);
+});
+</script>
+
+    
+<div class="sidebar">
+  <div class="mt-0 bg-white" style="height:100px"> 
+      <img src="http://127.0.0.1:8000/images/logo_hupp.bmp" class=" ml-5 mt-2" width="80 " height="80" alt="">
+    </div> 
+  <a  href="/">Acceuil</a>
+  <a href="http://127.0.0.1:8000/instruments">Instruments</a>
+  <a class="active" href="http://127.0.0.1:8000/categories">Catégories</a>
+  <a  href="http://127.0.0.1:8000/criters">Criteres</a>
+
+  <form class="form-inline mb-3 mt-4  " action="http://127.0.0.1:8000/instruments/search" method="POST">
+          <input type="hidden" name="_token" value="a9eDylghWXlVsmyX04RMsW0a8fRQuml7xUFzrYWr">          <input class="mx-1 col col-8 border border-primary   form-control " name="search" type="search" placeholder="Rechercher" aria-label="Rechercher">
+          <button class="btn btn-outline-primary col col-3  " type="submit"><i class="fa fa-search "></i></button>
+        </form> 
+</div>
+
+
+
+  
+    <div class="content">
+
+  <div class=" mt-5 text-left text-white"><h2>Ajouter une catégorie : </h2></div>
+
+  <div class=" mt-5 bg-white p-4 border rounded " >
+  <form method="POST" action="categories/add">
+    
+    <input type="hidden" name="_token" value="a9eDylghWXlVsmyX04RMsW0a8fRQuml7xUFzrYWr">    <div class="mb-3">
+      <label for="exampleInputEmail1" class="form-label mt-5">Nom du catégorie:</label>
+      <input type="text" name="nom"  class="form-control" id="exampleInputEmail1" >
+    </div>
+   
+   
+    <div class=" text-center mt-5 "><button type="submit" class=" btn btn-primary">Ajouter</button></div>
+  </form>
+  </div>
+
+  <div class=" mt-5 text-left text-white"><h2>Liste des catégories : </h2></div>
+
+  <div id="accordion">
+
+    
+               
+    <div class="card">
+      <div class="card-header" id="heading1">
+        <h5 class="mb-0">
+          <button class="btn btn-link" data-toggle="collapse" data-target="#collapse1" aria-expanded="true" aria-controls="collapseOne">
+balances          </button>
+        </h5>
+      </div>
+  
+      <div id="collapse1" class="collapse " aria-labelledby="heading1" data-parent="#accordion">
+        <div class="card-body">
+          <div class=" border rounded bg-white" >
+
+            <table class="table  bg-white ">
+          <thead>
+            <tr class="  text-white text-center bg-hupp">
+              <th scope="col">No:</th>
+              <th scope="col">instrument</th>
+              <th scope="col">refférence</th>
+              <th scope="col">dernier Etallonage</th>
+              <th scope="col">prochain Etallonage</th>
+        
+        
+            </tr>
+          </thead>
+                                   
+        <tbody>
+                  
+                           <tr class="text-center">
+                            <td width="5%">1</td>
+                              <td width="10%">balance1</td>
+                              <td width="10%">ref1</td>
+                              <td width="10%">12-12-2020</td>
+                              <td width="10%">11-12-2021</td>
+        
+                              </tr>
+            
+             
+            
+         
+            
+          </tbody> 
+        <tbody>
+                  
+                           <tr class="text-center">
+                            <td width="5%">2</td>
+                              <td width="10%">balance2</td>
+                              <td width="10%">ref2</td>
+                              <td width="10%">12-12-2020</td>
+                              <td width="10%">11-12-2021</td>
+        
+                              </tr>
+            
+             
+            
+         
+            
+          </tbody> 
+        <tbody>
+                  
+                           <tr class="text-center">
+                            <td width="5%">3</td>
+                              <td width="10%">balance3</td>
+                              <td width="10%">ref3</td>
+                              <td width="10%">12-12-2020</td>
+                              <td width="10%">11-12-2021</td>
+        
+                              </tr>
+            
+             
+            
+         
+            
+          </tbody> 
+        <tbody>
+                  
+                           <tr class="text-center">
+                            <td width="5%">4</td>
+                              <td width="10%">balance4</td>
+                              <td width="10%">ref4</td>
+                              <td width="10%">12-12-2020</td>
+                              <td width="10%">11-12-2021</td>
+        
+                              </tr>
+            
+             
+            
+         
+            
+          </tbody> 
+        <tbody>
+                  
+                           <tr class="text-center">
+                            <td width="5%">5</td>
+                              <td width="10%">balance5</td>
+                              <td width="10%">ref5</td>
+                              <td width="10%">12-12-2020</td>
+                              <td width="10%">11-12-2021</td>
+        
+                              </tr>
+            
+             
+            
+         
+            
+          </tbody> 
+        <tbody>
+                  
+                           <tr class="text-center">
+                            <td width="5%">6</td>
+                              <td width="10%">balance6</td>
+                              <td width="10%">ref6</td>
+                              <td width="10%">12-12-2020</td>
+                              <td width="10%">11-12-2021</td>
+        
+                              </tr>
+            
+             
+            
+         
+            
+          </tbody> 
+        <tbody>
+                  
+                           <tr class="text-center">
+                            <td width="5%">7</td>
+                              <td width="10%">balance7</td>
+                              <td width="10%">ref7</td>
+                              <td width="10%">12-12-2020</td>
+                              <td width="10%">11-12-2021</td>
+        
+                              </tr>
+            
+             
+            
+         
+            
+          </tbody> 
+        <tbody>
+                  
+                           <tr class="text-center">
+                            <td width="5%">8</td>
+                              <td width="10%">balance8</td>
+                              <td width="10%">ref8</td>
+                              <td width="10%">12-12-2020</td>
+                              <td width="10%">11-12-2021</td>
+        
+                              </tr>
+            
+             
+            
+         
+            
+          </tbody> 
+        <tbody>
+                  
+                           <tr class="text-center">
+                            <td width="5%">9</td>
+                              <td width="10%">balance9</td>
+                              <td width="10%">ref9</td>
+                              <td width="10%">12-12-2020</td>
+                              <td width="10%">11-12-2021</td>
+        
+                              </tr>
+            
+             
+            
+         
+            
+          </tbody> 
+        <tbody>
+                  
+                           <tr class="text-center">
+                            <td width="5%">10</td>
+                              <td width="10%">balance10</td>
+                              <td width="10%">ref10</td>
+                              <td width="10%">12-12-2020</td>
+                              <td width="10%">11-12-2021</td>
+        
+                              </tr>
+            
+             
+            
+         
+            
+          </tbody> 
+        <tbody>
+                  
+                           <tr class="text-center">
+                            <td width="5%">11</td>
+                              <td width="10%">balance11</td>
+                              <td width="10%">B1UP06</td>
+                              <td width="10%">2020-12-12</td>
+                              <td width="10%">2021-12-12</td>
+        
+                              </tr>
+            
+             
+            
+         
+            
+          </tbody>        
+        </table>
+        
+        
+        </div>        </div>
+      </div>
+    </div>
+    
+    <div class="card">
+      <div class="card-header" id="heading2">
+        <h5 class="mb-0">
+          <button class="btn btn-link" data-toggle="collapse" data-target="#collapse2" aria-expanded="true" aria-controls="collapseOne">
+thermomètres          </button>
+        </h5>
+      </div>
+  
+      <div id="collapse2" class="collapse " aria-labelledby="heading2" data-parent="#accordion">
+        <div class="card-body">
+          <div class=" border rounded bg-white" >
+
+            <table class="table  bg-white ">
+          <thead>
+            <tr class="  text-white text-center bg-hupp">
+              <th scope="col">No:</th>
+              <th scope="col">instrument</th>
+              <th scope="col">refférence</th>
+              <th scope="col">dernier Etallonage</th>
+              <th scope="col">prochain Etallonage</th>
+        
+        
+            </tr>
+          </thead>
+                                   
+        <tbody>
+                  
+                           <tr class="text-center">
+                            <td width="5%">1</td>
+                              <td width="10%">balance13</td>
+                              <td width="10%">B10UP06</td>
+                              <td width="10%">2020-02-20</td>
+                              <td width="10%">2021-02-19</td>
+        
+                              </tr>
+            
+             
+            
+         
+            
+          </tbody> 
+        <tbody>
+                  
+                           <tr class="text-center">
+                            <td width="5%">2</td>
+                              <td width="10%">Magnelique1</td>
+                              <td width="10%">m1</td>
+                              <td width="10%">2020-02-20</td>
+                              <td width="10%">2020-02-20</td>
+        
+                              </tr>
+            
+             
+            
+         
+            
+          </tbody> 
+        <tbody>
+                  
+                           <tr class="text-center">
+                            <td width="5%">3</td>
+                              <td width="10%">balance6</td>
+                              <td width="10%">ref6</td>
+                              <td width="10%">12-12-2020</td>
+                              <td width="10%">11-12-2021</td>
+        
+                              </tr>
+            
+             
+            
+         
+            
+          </tbody> 
+        <tbody>
+                  
+                           <tr class="text-center">
+                            <td width="5%">4</td>
+                              <td width="10%">balance8</td>
+                              <td width="10%">ref8</td>
+                              <td width="10%">12-12-2020</td>
+                              <td width="10%">11-12-2021</td>
+        
+                              </tr>
+            
+             
+            
+         
+            
+          </tbody> 
+        <tbody>
+                  
+                           <tr class="text-center">
+                            <td width="5%">5</td>
+                              <td width="10%">balance9</td>
+                              <td width="10%">ref9</td>
+                              <td width="10%">12-12-2020</td>
+                              <td width="10%">11-12-2021</td>
+        
+                              </tr>
+            
+             
+            
+         
+            
+          </tbody> 
+        <tbody>
+                  
+                           <tr class="text-center">
+                            <td width="5%">6</td>
+                              <td width="10%">balance10</td>
+                              <td width="10%">ref10</td>
+                              <td width="10%">12-12-2020</td>
+                              <td width="10%">11-12-2021</td>
+        
+                              </tr>
+            
+             
+            
+         
+            
+          </tbody> 
+        <tbody>
+                  
+                           <tr class="text-center">
+                            <td width="5%">7</td>
+                              <td width="10%">balance9</td>
+                              <td width="10%">ref9</td>
+                              <td width="10%">12-12-2020</td>
+                              <td width="10%">11-12-2021</td>
+        
+                              </tr>
+            
+             
+            
+         
+            
+          </tbody> 
+        <tbody>
+                  
+                           <tr class="text-center">
+                            <td width="5%">8</td>
+                              <td width="10%">balance10</td>
+                              <td width="10%">ref10</td>
+                              <td width="10%">12-12-2020</td>
+                              <td width="10%">11-12-2021</td>
+        
+                              </tr>
+            
+             
+            
+         
+            
+          </tbody>        
+        </table>
+        
+        
+        </div>        </div>
+      </div>
+    </div>
+    
+    <div class="card">
+      <div class="card-header" id="heading3">
+        <h5 class="mb-0">
+          <button class="btn btn-link" data-toggle="collapse" data-target="#collapse3" aria-expanded="true" aria-controls="collapseOne">
+Magneliques          </button>
+        </h5>
+      </div>
+  
+      <div id="collapse3" class="collapse " aria-labelledby="heading3" data-parent="#accordion">
+        <div class="card-body">
+          <div class=" border rounded bg-white" >
+
+            <table class="table  bg-white ">
+          <thead>
+            <tr class="  text-white text-center bg-hupp">
+              <th scope="col">No:</th>
+              <th scope="col">instrument</th>
+              <th scope="col">refférence</th>
+              <th scope="col">dernier Etallonage</th>
+              <th scope="col">prochain Etallonage</th>
+        
+        
+            </tr>
+          </thead>
+                                   
+        <tbody>
+                  
+                           <tr class="text-center">
+                            <td width="5%">1</td>
+                              <td width="10%">balance12</td>
+                              <td width="10%">dedef</td>
+                              <td width="10%">2020-02-02</td>
+                              <td width="10%">2201-02-02</td>
+        
+                              </tr>
+            
+             
+            
+         
+            
+          </tbody> 
+        <tbody>
+                  
+                           <tr class="text-center">
+                            <td width="5%">2</td>
+                              <td width="10%">Thermo1</td>
+                              <td width="10%">Thth</td>
+                              <td width="10%">2020-02-20</td>
+                              <td width="10%">2020-02-20</td>
+        
+                              </tr>
+            
+             
+            
+         
+            
+          </tbody> 
+        <tbody>
+                  
+                           <tr class="text-center">
+                            <td width="5%">3</td>
+                              <td width="10%">balance2</td>
+                              <td width="10%">ref2</td>
+                              <td width="10%">12-12-2020</td>
+                              <td width="10%">11-12-2021</td>
+        
+                              </tr>
+            
+             
+            
+         
+            
+          </tbody> 
+        <tbody>
+                  
+                           <tr class="text-center">
+                            <td width="5%">4</td>
+                              <td width="10%">balance3</td>
+                              <td width="10%">ref3</td>
+                              <td width="10%">12-12-2020</td>
+                              <td width="10%">11-12-2021</td>
+        
+                              </tr>
+            
+             
+            
+         
+            
+          </tbody> 
+        <tbody>
+                  
+                           <tr class="text-center">
+                            <td width="5%">5</td>
+                              <td width="10%">balance7</td>
+                              <td width="10%">ref7</td>
+                              <td width="10%">12-12-2020</td>
+                              <td width="10%">11-12-2021</td>
+        
+                              </tr>
+            
+             
+            
+         
+            
+          </tbody> 
+        <tbody>
+                  
+                           <tr class="text-center">
+                            <td width="5%">6</td>
+                              <td width="10%">vvvv</td>
+                              <td width="10%">B1UP06</td>
+                              <td width="10%">2020-02-20</td>
+                              <td width="10%">2021-02-20</td>
+        
+                              </tr>
+            
+             
+            
+         
+            
+          </tbody> 
+        <tbody>
+                  
+                           <tr class="text-center">
+                            <td width="5%">7</td>
+                              <td width="10%">balance13</td>
+                              <td width="10%">B10UP06</td>
+                              <td width="10%">2020-02-20</td>
+                              <td width="10%">2021-02-19</td>
+        
+                              </tr>
+            
+             
+            
+         
+            
+          </tbody>        
+        </table>
+        
+        
+        </div>        </div>
+      </div>
+    </div>
+      
+  </div>
+
+
+
+
+
+
+
+
+
+</div>
+
+
+
+   
+
+
+
+  
+       <script src="/js/app.js"></script>
+
+  </body>
+</html>
