@@ -67,9 +67,13 @@ ${"moyen".$i}=${"sommeC".$i}/$total;
 
 ${"s".$i}=${"s".$i}+pow(($instrument->{"c".$i})-${"moyen".$i},2);
 if ($total=="1") {
- $total="2";
+ 
+ return;
 
 }
+else {
+
+
 ${"sd".$i}=sqrt(${"s".$i}/($total-1));
 if (${"sd".$i}==0) {
   ${"sd".$i}=0.1;
@@ -83,7 +87,7 @@ if (${"sd".$i}==0) {
 
 
 
-
+}
     @endphp
   @endforeach
 
@@ -91,8 +95,15 @@ if (${"sd".$i}==0) {
 
 
 @foreach ($instrumentsActive as $instrument)
+
 @php
 
+if ($total=="1") {
+ 
+ return;
+
+}
+else {
     for ($i=1; $i <=$criters->count() ; $i++) {
         ${"EN".$i."_".$in}=$instrument->{"c".$i}-${"moyen".$i};
          ${"EN".$i."_".$in}= ${"EN".$i."_".$in}/${"sd".$i};
@@ -102,16 +113,21 @@ if (${"sd".$i}==0) {
     
    
 $NGmoy=$NGsom/$criters->count();
-@endphp
+ }@endphp
 
 @endforeach
 @php
 @endphp
 
-
+ 
 @php 
 $jk=1;
+if ($total=="1") {
+ 
+ return;
 
+}
+else {
          for ($index=1; $index <=$total ; $index++) {
 
         foreach ($criters as $criter) {
@@ -147,7 +163,7 @@ for ($index=1; $index <=$total  ; $index++) {
 }
 
 
-
+}
 @endphp 
 @if ($total >0)
 
