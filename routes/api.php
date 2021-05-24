@@ -2,7 +2,7 @@
 
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
-use App\Thermo;
+use App\thermo;
 /*
 |--------------------------------------------------------------------------
 | API Routes
@@ -16,7 +16,7 @@ use App\Thermo;
 
 
 Route::get('/add/{humidity}/{temperature}', function ($humidity, $temperature) {
-    $value=new Thermo();
+    $value=new thermo();
     date_default_timezone_set('Africa/Algiers');
     $value->temperature=$temperature;
     $value->humidity=$humidity;
@@ -26,7 +26,7 @@ Route::get('/add/{humidity}/{temperature}', function ($humidity, $temperature) {
 
 Route::get('/show', function () {
 
-$values=Thermo::all();
+$values=thermo::all();
 
 return view('thermo')->with("values",$values);
 });
