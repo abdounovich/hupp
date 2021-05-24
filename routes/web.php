@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\UserClass;
 
 /*
 |--------------------------------------------------------------------------
@@ -12,6 +13,11 @@ use Illuminate\Support\Facades\Route;
 | contains the "web" middleware group. Now create something great!
 |
 */
+
+Route::get('/a', function () {
+    echo $a=UserClass::create(5);
+  });
+
 
 Route::get('/', function () {
     return view('welcome');
@@ -44,6 +50,12 @@ Route::post('/categories/edit/{id}', "CategorieController@update")->name("catego
 Route::post('/categories/add', "CategorieController@store")->name("categories.add");
 
 
+Route::get('/medicaments', "MedicamentController@index")->name("medicaments.index");
+Route::post('/medicaments/add', "MedicamentController@store")->name("medicaments.add");
+Route::post('/medicaments/update/{id}', "MedicamentController@update");
+Route::get('/medicaments/delete/{id}', "MedicamentController@destroy")->name("medicaments.delete");
+Route::get('/medicaments/edit/{id}', "MedicamentController@edit")->name("medicaments.edit");
+Route::post('/medicaments/edit/{id}', "MedicamentController@modifier");
 
 Route::get('/information', function () {
     return view('information');
