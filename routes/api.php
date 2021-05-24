@@ -13,7 +13,6 @@ use App\Thermo;
 | is assigned the "api" middleware group. Enjoy building your API!
 |
 */
-Route::get('add/{temperature}/{humidity}', 'App\Http\Controllers\ThermoController@create');
 
 Route::get('/add', function ($humidity, $temperature) {
     $value=new Thermo();
