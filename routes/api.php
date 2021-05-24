@@ -2,7 +2,7 @@
 
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
-
+use App\Thermo;
 /*
 |--------------------------------------------------------------------------
 | API Routes
@@ -15,6 +15,11 @@ use Illuminate\Support\Facades\Route;
 */
 Route::get('add/{temperature}/{humidity}', 'App\Http\Controllers\ThermoController@create');
 
-Route::middleware('auth:api')->get('/user', function (Request $request) {
-    return $request->user();
+Route::get('/add', function ($humidity, $temperature) {
+    $value=new Thermo();
+    date_default_timezone_set('Africa/Algiers');
+    $value->temperature=$temperature;
+    $value->humidity=$humidity;
+    $value->save();
+    echo 'done' . "\n";
 });
