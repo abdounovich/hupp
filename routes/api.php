@@ -13,12 +13,9 @@ use App\Thermo;
 | is assigned the "api" middleware group. Enjoy building your API!
 |
 */
-Route::get('/aa', function () {
-return "ok";
 
-});
 
-Route::get('/add', function ($humidity, $temperature) {
+Route::get('/add/{humidity}/{temperature}', function ($humidity, $temperature) {
     $value=new Thermo();
     date_default_timezone_set('Africa/Algiers');
     $value->temperature=$temperature;
@@ -26,3 +23,12 @@ Route::get('/add', function ($humidity, $temperature) {
     $value->save();
     echo 'done' . "\n";
 });
+
+Route::get('/show', function () {
+
+$values=Thermo::all();
+
+return view('thermo')->with("values",$values);
+});
+
+
