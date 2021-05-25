@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use App\UserClass;
+use App\thermo;
 
 /*
 |--------------------------------------------------------------------------
@@ -13,6 +14,26 @@ use App\UserClass;
 | contains the "web" middleware group. Now create something great!
 |
 */
+
+Route::get('/add/{humidity}/{temperature}', function ($humidity, $temperature) {
+    $value=new thermo();
+    date_default_timezone_set('Africa/Algiers');
+    $value->temperature=$temperature;
+    $value->humidity=$humidity;
+    $value->save();
+    echo 'done' . "\n";
+});
+
+Route::get('/show', function () {
+
+$values=thermo::all();
+
+return view('thermo')->with("values",$values);
+});
+
+
+
+
 
 Route::get('/a', function () {
     echo $a=UserClass::create(5);
