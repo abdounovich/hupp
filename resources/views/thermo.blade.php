@@ -28,6 +28,7 @@
 
          <tr>
             <td  class="text-center"> {{$item->id}}</td>
+            <td  class="text-center"> {{$item->created_at}}</td>
             <td class="text-center" >{{$item->temperature}} °C </td>
             <td  class="text-center">{{$item->humidity}} % </td>
 
